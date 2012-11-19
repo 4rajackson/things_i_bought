@@ -1,0 +1,21 @@
+<%= form_for(@homer) do |f| %>
+  <% if @homer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@homer.errors.count, "error") %> prohibited this homer from being saved:</h2>
+
+      <ul>
+      <% @homer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
